@@ -2,15 +2,14 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: rgba(31, 42, 60, 0.5);
-
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  text-align: center;
 }
 
 
@@ -39,7 +38,9 @@ h1 {
 
 .header {
   display: flex;
+  position: relative;
   margin-top: -20px;
+  justify-content:right;
 }
 
 .opciones {
@@ -52,19 +53,51 @@ h1 {
 }
 
 .icono{
-  fill: white;
-  width: 50px;
+  fill: rgb(153, 153, 153);
+  width: 40px;
 }
 
 .perfil{
   fill:#0f61a5;
-  width: 45px;
+  width: 35px;
+}
+
+.buscador{
+  display: flex;
+  margin-top: 30px;
+}
+
+.buscador input{
+  position: relative;
+  height: 22px;
+}
+
+.buscador svg{
+  position:absolute;
+  width: 30px;
+  top: 45px;
+  fill: rgba(206, 205, 205, 0.171);
+  transition: all 1s;
+  cursor: pointer;
+  margin-left: 210px;
+}
+
+.buscador svg:hover{
+  fill: rgb(3, 92, 15);
+  transform: scale(1.1);
 }
 
 .opciones:hover {
-  background-color: #444f52;
+  background-color: #9dc2cc2a;
 }
 
+@media(width<900px){
+  .opciones{
+    display: grid;
+    width: 100%;
+  }
+
+}
 .divOp{
   position: fixed;
   display: block;
