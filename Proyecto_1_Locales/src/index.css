@@ -1,0 +1,123 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgba(31, 42, 60, 0.5);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+  display: flex;
+  place-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+.aceptar,.InputsCliente {
+  border-radius: 8px;
+  border: 0.1px solid rgba(255, 255, 255, 0.171);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 1s;
+}
+
+.header {
+  display: flex;
+  margin-top: -20px;
+}
+
+.opciones {
+  cursor: pointer;
+  padding: 13px;
+  border-radius: 12px;
+  font-size: 22px;  
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.icono{
+  fill: white;
+  width: 50px;
+}
+
+.perfil{
+  fill:#0f61a5;
+  width: 45px;
+}
+
+.opciones:hover {
+  background-color: #444f52;
+}
+
+.divOp{
+  position: fixed;
+  display: block;
+  align-items: center;
+  margin-top: 15px;
+}
+
+li {
+  display: none;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 12px;
+  margin: 5px;
+  transition: all 0.6s;
+  list-style-type: none;
+  background-color: #444f52;
+}
+
+li:hover {
+  background-color: #0e4d7d;
+}
+
+.opciones:focus-within li {
+  display: block;
+}
+
+.opciones:focus-within,.opciones:focus-within .perfil {
+  background-color: #0e4d7d;
+  fill: white;
+}
+
+.InputsCliente{
+  background-color: #1a1a1a;
+}
+
+button{
+  background-color: #0e4d7d;
+}
+
+button:hover{
+  border-color: #029ab9;
+  transform: scale(1.1);
+}
+.InputsCliente:hover {
+  border-color: #0297b9;
+}
+
+.contenedorInp{
+  margin: 20px;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
