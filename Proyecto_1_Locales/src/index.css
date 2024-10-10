@@ -94,6 +94,7 @@ h1 {
 }
 
 
+
 .divOp{
   position: fixed;
   display: block;
@@ -145,6 +146,11 @@ button:hover{
 
 .contenedorInp{
   margin: 20px;
+  text-align: center;
+}
+
+.contenedorInp svg{
+  margin-left: 400px;
 }
 
 button:focus,

@@ -1,11 +1,10 @@
-import {Header,Registro,Login} from './Cliente.jsx'
+import {Cliente} from './Cliente.jsx'
 
 export function App() {
 
   return (
       <>
-        <Header/>
-        <Registro/>
+        <Cliente/>
       </>
     )
   }
