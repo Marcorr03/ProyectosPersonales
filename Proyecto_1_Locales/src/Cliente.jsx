@@ -4,9 +4,9 @@ export function Registro() {
     return (
       <>
         <div className="contenedorInp">
-          <input type="text" className='InputsCliente' placeholder='Nombre' />
-          <input type="text" className='InputsCliente' placeholder='Nombre' />
-          <input type="text" className='InputsCliente' placeholder='Nombre' />
+          <input type="text" id='Nombre' className='InputsCliente' placeholder='Nombre' />
+          <input type="text" id='Edad' className='InputsCliente' placeholder='Edad' />
+          <input type="text" id='Ocupacion' className='InputsCliente' placeholder='Ocupacion' />
         </div>
       </>
     )
@@ -23,45 +23,66 @@ export function Login(){
     </>
   )
 }
-function Tabla(datos){
-return(
-  <>
-  <table>
+function Tabla(datos) {
+
+  const IdAleatorio = () => {
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    return array[0];
+  };
+
+  var persona = [
+    { id: IdAleatorio(), Nombre: "Juan", Edad: "28", Ocupacion: "Desarrollador" },
+    { id: IdAleatorio(), Nombre: "Ana", Edad: "34", Ocupacion: "Diseñadora" },
+    { id: IdAleatorio(), Nombre: "Pedro", Edad: "40", Ocupacion: "Gerente" },
+    { id: IdAleatorio(), Nombre: "Luis", Edad: "45", Ocupacion: "Analista" }
+  ];
+
+  const handleClick = (id) => {
+    const seleccion = persona.find(p => p.id === id);
+    if (seleccion) {
+        document.getElementById("Nombre").value= seleccion.Nombre;
+        document.getElementById("Edad").value= seleccion.Edad;
+        document.getElementById("Ocupacion").value= seleccion.Ocupacion;
+    }
+  };
+
+  return (
+    <>
+      <table>
         <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Edad</th>
-                <th>Ocupación</th>
-            </tr>
+          <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Ocupación</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Juan</td>
-                <td>28</td>
-                <td>Desarrollador</td>
+          {persona.map((element, index) => (
+            <tr key={index} onClick={() => handleClick(element.id)}>
+              <td>{element.Nombre}</td>
+              <td>{element.Edad}</td>
+              <td>{element.Ocupacion}</td>
             </tr>
-            <tr>
-                <td>Ana</td>
-                <td>34</td>
-                <td>Diseñadora</td>
-            </tr>
-            <tr>
-                <td>Pedro</td>
-                <td>40</td>
-                <td>Gerente</td>
-            </tr>
+          ))}
         </tbody>
-    </table>
-  </>
-)
+      </table>
+    </>
+  );
 }
-function Buscador(dato,accion){
+function Buscar(event){
+  alert(document.getElementById("buscar").value)
+}
+
+function Buscador(){
+  
   return(
   <div className='buscador'>  
-        <input type="text" className='InputsCliente' placeholder='Buscar' /*onKeyDown={Buscador(dato,accion)}*/ />
+        <input type="text" className='InputsCliente' id='buscar' placeholder='Buscar' onKeyDown={Buscar()} />
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
       </div>
   )
+  
 }
 
 export function Header(){
@@ -93,7 +114,7 @@ export function Header(){
           </div>
         </ul>
       ))}
-      {Buscador("Hola","1")}
+      {Buscador()}
     </nav>
       {Tabla("Hola")}
     </>
