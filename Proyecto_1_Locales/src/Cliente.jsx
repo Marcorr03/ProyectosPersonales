@@ -1,5 +1,4 @@
 import './Index.css'
-
 export function Registro() {
   
     return (
@@ -22,6 +21,46 @@ export function Login(){
         <button className='aceptar'>Iniciar</button>
       </div>
     </>
+  )
+}
+function Tabla(datos){
+return(
+  <>
+  <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Ocupación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Juan</td>
+                <td>28</td>
+                <td>Desarrollador</td>
+            </tr>
+            <tr>
+                <td>Ana</td>
+                <td>34</td>
+                <td>Diseñadora</td>
+            </tr>
+            <tr>
+                <td>Pedro</td>
+                <td>40</td>
+                <td>Gerente</td>
+            </tr>
+        </tbody>
+    </table>
+  </>
+)
+}
+function Buscador(dato,accion){
+  return(
+  <div className='buscador'>  
+        <input type="text" className='InputsCliente' placeholder='Buscar' /*onKeyDown={Buscador(dato,accion)}*/ />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+      </div>
   )
 }
 
@@ -54,12 +93,12 @@ export function Header(){
           </div>
         </ul>
       ))}
-      <div className='buscador'>  
-        <input type="text" className='InputsCliente' placeholder='Buscar' />
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-      </div>
+      {Buscador("Hola","1")}
     </nav>
-
+      {Tabla("Hola")}
     </>
   )
 }
+
+
+
